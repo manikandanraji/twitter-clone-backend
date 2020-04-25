@@ -1,7 +1,9 @@
 type User {
   id: ID! @id
-  name: String! @unique
+  firstname: String!
+  lastname: String!
   email: String! @unique
+  handle: String! @unique
   password: String
   tweets: [Tweet!]! @relation(name: "TweetsByUser" onDelete: CASCADE)
   retweets: [Tweet!]! @relation(name: "Retweets")

@@ -1,6 +1,8 @@
 type User {
   id: ID!
-  name: String!
+  firstname: String!
+  lastname: String!
+  handle: String!
   email: String!
   tweets: [Tweet!]!
   retweets: [Tweet!]!
@@ -40,4 +42,9 @@ type File {
   url: String!
   tweet: Tweet
   user: User
+}
+
+type AuthPayload {
+  token: String!
+  user: User!
 }
