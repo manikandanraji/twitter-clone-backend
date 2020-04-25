@@ -1,8 +1,9 @@
 module.exports = {
 	Mutation: {
-		postTweet: async (parent, args, ctx) => {
+		newTweet: async (parent, args, ctx) => {
 			// 1. make sure the user is authenticated
 			const userId = ctx.getUserId(ctx);
+			console.log(userId)
 			if (!userId) throw Error("You need to be authenticated");
 
 			// 2. create a new tweet

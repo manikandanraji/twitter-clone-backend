@@ -10,7 +10,7 @@ module.exports = {
 				where: { id_contains: args.id }
 			});
 
-			if (following.length === 0) throw Error("You are not following him.");
+			if (!following.length) throw Error("You are not following him.");
 
 			// 3. if following, then disconnect the relationship
 			await ctx.prisma.updateUser({

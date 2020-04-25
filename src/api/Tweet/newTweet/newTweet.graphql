@@ -1,5 +1,5 @@
 type Mutation {
-  postTweet(
+  newTweet(
     text: String! 
     files: [String!]
     tags: [String!]

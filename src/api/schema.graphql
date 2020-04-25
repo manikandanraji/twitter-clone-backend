@@ -11,6 +11,12 @@ type User {
   comments: [Comment!]!
   likes: [Like!]!
   files: [File!]!
+  # computed fields
+  fullname: String!
+  isSelf: Boolean!
+  isFollowing: Boolean!
+  followingCount: Int!
+  followersCount: Int!
 }
 
 type Tweet {
@@ -23,10 +29,15 @@ type Tweet {
   comments: [Comment!]!
   likes: [Like!]!
   location: String
+  # computer fields
+  likesCount: Int!
+  commentsCount: Int!
+  retweetsCount: Int!
 }
 
 type Comment {
   id: ID!
+  text: String!
   tweet: Tweet
   user: User
 }
