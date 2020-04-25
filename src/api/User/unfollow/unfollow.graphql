@@ -1,0 +1,3 @@
+type Mutation {
+  unfollow(id: ID!): Boolean!
+}

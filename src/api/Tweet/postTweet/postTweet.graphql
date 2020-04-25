@@ -1,0 +1,7 @@
+type Mutation {
+  postTweet(
+    text: String! 
+    files: [String!]
+    tags: [String!]
+  ): Tweet!
+}
