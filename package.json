@@ -1,0 +1,20 @@
+{
+  "name": "twitter-backend",
+  "version": "1.0.0",
+  "description": "Twitter backend with Prisma + Graphql",
+  "main": "src/server.js",
+  "scripts": {
+    "dev": "nodemon -e js,graphql src/server.js"
+  },
+  "author": "Manikandan Raji",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "graphql-tools": "^5.0.0",
+    "graphql-yoga": "^1.18.3",
+    "merge-graphql-schemas": "^1.7.8"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.3"
+  }
+}

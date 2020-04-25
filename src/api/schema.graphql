@@ -1,0 +1,43 @@
+type User {
+  id: ID!
+  name: String!
+  email: String!
+  tweets: [Tweet!]!
+  retweets: [Tweet!]!
+  following: [User!]!
+  followers: [User!]!
+  comments: [Comment!]!
+  likes: [Like!]!
+  files: [File!]!
+}
+
+type Tweet {
+  id: ID!
+  user: User
+  text: String!
+  tags: [String!]! 
+  retweets: [User!]!
+  files: [File!]!
+  comments: [Comment!]!
+  likes: [Like!]!
+  location: String
+}
+
+type Comment {
+  id: ID!
+  tweet: Tweet
+  user: User
+}
+
+type Like {
+  id: ID!
+  tweet: Tweet
+  user: User
+}
+
+type File {
+  id: ID!
+  url: String!
+  tweet: Tweet
+  user: User
+}

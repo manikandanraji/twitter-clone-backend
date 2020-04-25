@@ -1,0 +1,54 @@
+type User {
+  id: ID! @id
+  name: String! @unique
+  email: String! @unique
+  password: String
+  tweets: [Tweet!]! @relation(name: "TweetsByUser" onDelete: CASCADE)
+  retweets: [Tweet!]! @relation(name: "Retweets")
+  following: [User!]! @relation(name: "FollowRelation")
+  followers: [User!]! @relation(name: "FollowRelation")
+  comments: [Comment!]! @relation(name: "CommentsByUser", onDelete: CASCADE)
+  likes: [Like!]! @relation(name: "LikesByUser" onDelete: CASCADE)
+  files: [File!]! @relation(name: "FilesByUser" onDelete: CASCADE)
+  createdAt: DateTime! @createdAt
+  updatedAt: DateTime! @updatedAt
+}
+
+type Tweet {
+  id: ID! @id
+  user: User @relation(name: "TweetsByUser")
+  text: String!
+  retweets: [User!]! @relation(name: "Retweets")
+  tags: [String!]! @scalarList(strategy: RELATION)
+  files: [File!]! @relation(name: "FilesForTweets" onDelete: CASCADE)
+  comments: [Comment!]! @relation(name: "CommentsForTweets" onDelete: CASCADE)
+  likes: [Like!]! @relation(name: "LikesForTweets" onDelete: CASCADE)
+  location: String
+  createdAt: DateTime! @createdAt
+  updatedAt: DateTime! @updatedAt
+}
+
+type Comment {
+  id: ID! @id
+  tweet: Tweet @relation(name: "CommentsForTweets")
+  user: User @relation(name: "CommentsByUser")
+  createdAt: DateTime! @createdAt
+  updatedAt: DateTime! @updatedAt
+}
+
+type Like {
+  id: ID! @id
+  tweet: Tweet @relation(name: "LikesForTweets")
+  user: User @relation(name: "LikesByUser")
+  createdAt: DateTime! @createdAt
+  updatedAt: DateTime! @updatedAt
+}
+
+type File {
+  id: ID! @id
+  url: String!
+  tweet: Tweet @relation(name: "FilesForTweets")
+  user: User @relation(name: "FilesByUser")
+  createdAt: DateTime! @createdAt
+  updatedAt: DateTime! @updatedAt
+}
