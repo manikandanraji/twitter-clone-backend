@@ -1,0 +1,12 @@
+type Mutation {
+  editProfile(
+    firstname: String
+    lastname: String
+    bio: String
+    website: String
+    dob: String
+    avatar: String
+    coverPhoto: String
+    location: String
+  ): User!
+}

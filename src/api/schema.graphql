@@ -4,6 +4,12 @@ type User {
   lastname: String!
   handle: String!
   email: String!
+  coverPhoto: String
+  avatar: String
+  bio: String
+  location: String
+  website: String
+  dob: String
   tweets: [Tweet!]!
   retweets: [Tweet!]!
   following: [User!]!
@@ -17,6 +23,10 @@ type User {
   isFollowing: Boolean!
   followingCount: Int!
   followersCount: Int!
+  tweetsCount: Int!
+  # prisma does this
+  createdAt: String
+  updatedAt: String
 }
 
 type Tweet {
@@ -28,11 +38,13 @@ type Tweet {
   files: [File!]!
   comments: [Comment!]!
   likes: [Like!]!
-  location: String
   # computer fields
   likesCount: Int!
   commentsCount: Int!
   retweetsCount: Int!
+  # prisma does this
+  createdAt: String
+  updatedAt: String
 }
 
 type Comment {
@@ -40,6 +52,9 @@ type Comment {
   text: String!
   tweet: Tweet
   user: User
+  # prisma does this
+  createdAt: String
+  updatedAt: String
 }
 
 type Like {

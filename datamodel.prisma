@@ -5,6 +5,12 @@ type User {
   email: String! @unique
   handle: String! @unique
   password: String
+  coverPhoto: String @default(value: "")
+  avatar: String @default(value: "")
+  bio: String @default(value: "")
+  location: String @default(value: "")
+  website: String @default(value: "")
+  dob: String @default(value: "")
   tweets: [Tweet!]! @relation(name: "TweetsByUser" onDelete: CASCADE)
   retweets: [Tweet!]! @relation(name: "Retweets")
   following: [User!]! @relation(name: "FollowRelation")
@@ -25,13 +31,13 @@ type Tweet {
   files: [File!]! @relation(name: "FilesForTweets" onDelete: CASCADE)
   comments: [Comment!]! @relation(name: "CommentsForTweets" onDelete: CASCADE)
   likes: [Like!]! @relation(name: "LikesForTweets" onDelete: CASCADE)
-  location: String
   createdAt: DateTime! @createdAt
   updatedAt: DateTime! @updatedAt
 }
 
 type Comment {
   id: ID! @id
+  text: String!
   tweet: Tweet @relation(name: "CommentsForTweets")
   user: User @relation(name: "CommentsByUser")
   createdAt: DateTime! @createdAt
@@ -51,6 +57,14 @@ type File {
   url: String!
   tweet: Tweet @relation(name: "FilesForTweets")
   user: User @relation(name: "FilesByUser")
+  createdAt: DateTime! @createdAt
+  updatedAt: DateTime! @updatedAt
+}
+
+type Tag {
+  id: ID! @id
+  text: String!
+  tweets: [Tweet!]!
   createdAt: DateTime! @createdAt
   updatedAt: DateTime! @updatedAt
 }

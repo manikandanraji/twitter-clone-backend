@@ -1,6 +1,8 @@
 module.exports = {
 	User: {
 		fullname: (parent, args, ctx) => {
+			console.log(parent.firstname)
+			console.log(parent.lastname)
 			return `${parent.firstname} ${parent.lastname}`;
 		},
 		isSelf: (parent, args, ctx) => {
@@ -21,9 +23,18 @@ module.exports = {
 			const followers = await ctx.prisma.user({ id: parent.id }).followers();
 			return followers.length;
 		},
-		followingCount: async (parent, arg, ctx) => {
+		followingCount: async (parent, args, ctx) => {
 			const following = await ctx.prisma.user({ id: parent.id }).following();
 			return following.length;
+		},
+		tweetsCount: async (parent, args, ctx) => {
+			const aggregate = await ctx.prisma.tweetsConnection({
+				where: {
+					user: { id: parent.id }
+				}
+			}).aggregate()
+
+			return aggregate.count;
 		}
 	}
 };
