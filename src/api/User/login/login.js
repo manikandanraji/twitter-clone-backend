@@ -14,7 +14,7 @@ module.exports = {
 
 			// 3. send back authpayload -> token, user
 			const payload = { userId: user.id }
-			const token = await jwt.sign(payload, process.env.JWT_SECRET);
+			const token = jwt.sign(payload, process.env.JWT_SECRET);
 
 			// 4. do not send back the password
 			delete user.password;
