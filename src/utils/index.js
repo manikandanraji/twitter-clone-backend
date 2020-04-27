@@ -1,11 +1,10 @@
 const jwt = require('jsonwebtoken');
 
 exports.getUserId = ctx => {
-	const authHeader = ctx.request.get('Authorization');
-	if(authHeader) {
-		const token = authHeader.replace('Bearer', '');
-		const {  userId } = jwt.verify(token, process.env.JWT_SECRET);
-		return userId
+	const token = ctx.request.get('Authorization');
+	if(token) {
+		const decoded = jwt.verify(token, process.env.JWT_SECRET);
+		return decoded.userId;
 	}
 
 	throw Error("You need to be authenticated.")
