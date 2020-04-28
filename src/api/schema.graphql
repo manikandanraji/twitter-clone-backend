@@ -55,6 +55,8 @@ type Comment {
   text: String!
   tweet: Tweet
   user: User
+  # computed fields
+  isCommentMine: Boolean!
   # prisma does this
   createdAt: String
   updatedAt: String

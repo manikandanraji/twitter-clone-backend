@@ -1,9 +1,9 @@
-const { TWEET_FRAGMENT } = require('../../../utils/fragments.js');
+const { MASTER_TWEET_FRAGMENT } = require('../../../utils/fragments.js');
 
 module.exports = {
 	Query: {
 		tweet: (parent, args, ctx) => {
-			return ctx.prisma.tweet({ id: args.id }).$fragment(TWEET_FRAGMENT)
+			return ctx.prisma.tweet({ id: args.id }).$fragment(MASTER_TWEET_FRAGMENT)
 		}
 	}
 };

@@ -41,8 +41,8 @@ exports.PROFILE_FRAGMENT = `
 	}
 `;
 
-exports.TWEET_FRAGMENT = `
-	fragment TWEET_FRAGMENT on Tweet {
+exports.MASTER_TWEET_FRAGMENT = `
+	fragment MASTER_TWEET_FRAGMENT on Tweet {
 		id
 		text
 		tags
@@ -53,11 +53,25 @@ exports.TWEET_FRAGMENT = `
 		user {
 			${USER_FRAGMENT}
 		}
+		comments {
+			id
+			text
+			user {
+				${USER_FRAGMENT}
+			}
+			createdAt
+		}
 		createdAt
 	}
 `;
 
-exports.RETWEET_FRAGMENT = `
-	fragment RETWEET_FRAGMENT on Retweet {
+exports.COMMENT_FRAGMENT = `
+	fragment COMMENT_FRAGMENT on Comment {
+		id
+		text
+		user {
+			${USER_FRAGMENT}
+		}
+		createdAt
 	}
 `;

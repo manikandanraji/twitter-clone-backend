@@ -1,3 +1,5 @@
+const { COMMENT_FRAGMENT } = require('../../../utils/fragments');
+
 module.exports = {
 	Mutation: {
 		addComment: async (parent, args, ctx) => {
@@ -18,7 +20,7 @@ module.exports = {
 				user: {
 					connect: { id: userId }
 				}
-			});
+			}).$fragment(COMMENT_FRAGMENT);
 
 			// 4. return the comment
 			return comment;
