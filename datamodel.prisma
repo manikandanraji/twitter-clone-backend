@@ -11,13 +11,13 @@ type User {
   location: String @default(value: "")
   website: String @default(value: "")
   dob: String @default(value: "")
-  tweets: [Tweet!]! @relation(name: "TweetsByUser" onDelete: CASCADE)
-  retweets: [Tweet!]! @relation(name: "Retweets")
+  tweets: [Tweet!]! @relation(name: "TweetsByUser", onDelete: CASCADE)
+  retweets: [Retweet!]! @relation(name: "RetweetsByUser" onDelete: CASCADE)
   following: [User!]! @relation(name: "FollowRelation")
   followers: [User!]! @relation(name: "FollowRelation")
   comments: [Comment!]! @relation(name: "CommentsByUser", onDelete: CASCADE)
-  likes: [Like!]! @relation(name: "LikesByUser" onDelete: CASCADE)
-  files: [File!]! @relation(name: "FilesByUser" onDelete: CASCADE)
+  likes: [Like!]! @relation(name: "LikesByUser", onDelete: CASCADE)
+  files: [File!]! @relation(name: "FilesByUser", onDelete: CASCADE)
   createdAt: DateTime! @createdAt
   updatedAt: DateTime! @updatedAt
 }
@@ -26,11 +26,11 @@ type Tweet {
   id: ID! @id
   user: User @relation(name: "TweetsByUser")
   text: String!
-  retweets: [User!]! @relation(name: "Retweets")
   tags: [String!]! @scalarList(strategy: RELATION)
-  files: [File!]! @relation(name: "FilesForTweets" onDelete: CASCADE)
-  comments: [Comment!]! @relation(name: "CommentsForTweets" onDelete: CASCADE)
-  likes: [Like!]! @relation(name: "LikesForTweets" onDelete: CASCADE)
+  files: [File!]! @relation(name: "FilesForTweets", onDelete: CASCADE)
+  comments: [Comment!]! @relation(name: "CommentsForTweets", onDelete: CASCADE)
+  likes: [Like!]! @relation(name: "LikesForTweets", onDelete: CASCADE)
+  retweets: [Retweet!] @relation(name: "RetweetsOfTweet" onDelete: CASCADE)
   createdAt: DateTime! @createdAt
   updatedAt: DateTime! @updatedAt
 }
@@ -65,6 +65,14 @@ type Tag {
   id: ID! @id
   text: String!
   tweets: [Tweet!]!
+  createdAt: DateTime! @createdAt
+  updatedAt: DateTime! @updatedAt
+}
+
+type Retweet {
+  id: ID! @id
+  tweet: Tweet @relation(name: "RetweetsOfTweet")
+  user: User @relation(name: "RetweetsByUser")
   createdAt: DateTime! @createdAt
   updatedAt: DateTime! @updatedAt
 }

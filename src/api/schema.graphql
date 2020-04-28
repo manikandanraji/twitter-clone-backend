@@ -11,7 +11,7 @@ type User {
   website: String
   dob: String
   tweets: [Tweet!]!
-  retweets: [Tweet!]!
+  retweets: [Retweet!]!
   following: [User!]!
   followers: [User!]!
   comments: [Comment!]!
@@ -34,14 +34,17 @@ type Tweet {
   user: User
   text: String!
   tags: [String!]! 
-  retweets: [User!]!
   files: [File!]!
   comments: [Comment!]!
   likes: [Like!]!
+  retweets: [Retweet!]!
   # computer fields
   likesCount: Int!
   commentsCount: Int!
   retweetsCount: Int!
+  isLiked: Boolean!
+  isTweetMine: Boolean!
+  isRetweet: Boolean!
   # prisma does this
   createdAt: String
   updatedAt: String
@@ -68,6 +71,14 @@ type File {
   url: String!
   tweet: Tweet
   user: User
+}
+
+type Retweet {
+  id: ID!
+  tweet: Tweet 
+  user: User 
+  createdAt: String!
+  updatedAt: String!
 }
 
 type AuthPayload {

@@ -4,7 +4,7 @@ const USER_FRAGMENT = `
 	avatar
 	firstname
 	lastname
-`
+`;
 
 const FILE_FRAGMENT = `
 	id
@@ -53,14 +53,11 @@ exports.TWEET_FRAGMENT = `
 		user {
 			${USER_FRAGMENT}
 		}
-		comments {
-			id
-			text
-			user {
-			  ${USER_FRAGMENT}
-			}
-			createdAt
-		}
 		createdAt
+	}
+`;
+
+exports.RETWEET_FRAGMENT = `
+	fragment RETWEET_FRAGMENT on Retweet {
 	}
 `;
