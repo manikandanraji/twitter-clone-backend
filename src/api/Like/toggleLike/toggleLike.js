@@ -13,7 +13,6 @@ module.exports = {
 			});
 
 			if (like) {
-				console.log('deleting like...')
 				await ctx.prisma.deleteLike({ id: like.id });
 				return true;
 			}

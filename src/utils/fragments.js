@@ -45,6 +45,7 @@ exports.TWEET_FRAGMENT = `
 	fragment TWEET_FRAGMENT on Tweet {
 		id
 		text
+		tags
 		files {
 			id
 			url

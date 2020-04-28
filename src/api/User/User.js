@@ -1,8 +1,6 @@
 module.exports = {
 	User: {
 		fullname: (parent, args, ctx) => {
-			console.log(parent.firstname)
-			console.log(parent.lastname)
 			return `${parent.firstname} ${parent.lastname}`;
 		},
 		isSelf: (parent, args, ctx) => {
