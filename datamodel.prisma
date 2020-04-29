@@ -5,8 +5,8 @@ type User {
   email: String! @unique
   handle: String! @unique
   password: String
-  coverPhoto: String @default(value: "")
-  avatar: String @default(value: "")
+  coverPhoto: String @default(value: "https://res.cloudinary.com/douy56nkf/image/upload/v1588128318/twitter-build/s4fftpwcaxpf19vh6zdo.png")
+  avatar: String @default(value: "https://res.cloudinary.com/douy56nkf/image/upload/v1588127894/twitter-build/bvxmlgckusmrwyivsnzr.svg")
   bio: String @default(value: "")
   location: String @default(value: "")
   website: String @default(value: "")

@@ -32,8 +32,12 @@ exports.PROFILE_FRAGMENT = `
 		tweets {
 			id
 			text
+			tags
 			files {
 				${FILE_FRAGMENT}
+			}
+			user {
+				${USER_FRAGMENT}
 			}
 			createdAt
 		}

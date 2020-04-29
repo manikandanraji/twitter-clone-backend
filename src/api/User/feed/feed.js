@@ -28,16 +28,16 @@ module.exports = {
 
 			// get the tweets of the user and the people whom they are following
 			const following = await ctx.prisma.user({ id: userId }).following();
-			const users = following.map(user => user.id);
 
 			const tweets = await ctx.prisma.tweets({
 				where: {
 					user: {
-						id_in: users.concat[userId]
+						id_in: following.map(user => user.id).concat([userId])
 					}
 				},
 				orderBy: 'createdAt_DESC'
 			}).$fragment(TWEET_FRAGMENT)
+
 
 			return tweets;
 		}
