@@ -69,6 +69,26 @@ exports.MASTER_TWEET_FRAGMENT = `
 	}
 `;
 
+exports.TWEET_FRAGMENT = `
+	fragment TWEET_FRAGMENT on Tweet {
+		id
+		text
+		tags
+		files {
+			id
+			url
+		}
+		user {
+			id
+			avatar
+			firstname
+			lastname
+			handle
+		}
+		createdAt
+	}
+`;
+
 exports.COMMENT_FRAGMENT = `
 	fragment COMMENT_FRAGMENT on Comment {
 		id
@@ -79,3 +99,4 @@ exports.COMMENT_FRAGMENT = `
 		createdAt
 	}
 `;
+

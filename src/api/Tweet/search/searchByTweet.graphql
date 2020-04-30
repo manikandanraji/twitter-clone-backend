@@ -1,3 +1,3 @@
 type Query {
-  searchByTweet(term: String!): [Tweet!]
+  searchByTweet(term: String!): [Tweet!]!
 }
