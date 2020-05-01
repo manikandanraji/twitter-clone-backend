@@ -1,7 +1,7 @@
 # Twitter Clone - Backend
 
 Built with Prisma + GraphQL
-If you are looking for the backend repo, it lives here [backend](https://github.com/manikandanraji/twitter-clone-backend)
+If you are looking for the frontend repo, it lives here [frontend](https://github.com/manikandanraji/twitter-clone-frontend)
 
 # The Stack
 
@@ -10,7 +10,6 @@ If you are looking for the backend repo, it lives here [backend](https://github.
 2. GraphQLServer - graphql-yoga
 3. Authentication - JWT 
 4. Image upload - Cloudinary
-5. Editor - the mighty "VIM" 
 
 ## Frontend
 1. Frontend - Our beloved React
