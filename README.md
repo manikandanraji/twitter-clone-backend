@@ -31,6 +31,21 @@ If you are looking for the frontend repo, it lives here [frontend](https://githu
 - Toggle between light and dark mode
 - Cycle through five different accent colors
 
+# How to setup locally
+
+- You need to have a prisma account
+- Make sure to install the prisma globally in your machine 
+
+	```bash
+	npm i -g prisma
+
+	# once you created your account, you can login from the terminal
+	prisma login
+	```
+- Then have a look at this video if prisma sounds new to you.
+
+[![Everything Is AWESOME](screenshots/thumbnail.png)](https://youtu.be/Y71oeTYinRc "Twitter Clone backend setup")
+
 # Look at the UI
 
 ## Dark Mode
