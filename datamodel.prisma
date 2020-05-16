@@ -1,0 +1,84 @@
+type User {
+  id: ID! @id
+  firstname: String!
+  lastname: String!
+  email: String! @unique
+  handle: String! @unique
+  password: String
+  coverPhoto: String
+    @default(
+      value: "https://res.cloudinary.com/douy56nkf/image/upload/v1588128318/twitter-build/s4fftpwcaxpf19vh6zdo.png"
+    )
+  avatar: String
+    @default(
+      value: "https://res.cloudinary.com/douy56nkf/image/upload/v1588127894/twitter-build/bvxmlgckusmrwyivsnzr.svg"
+    )
+  bio: String @default(value: "")
+  location: String @default(value: "")
+  website: String @default(value: "")
+  dob: String @default(value: "")
+  tweets: [Tweet!]! @relation(name: "TweetsByUser", onDelete: CASCADE)
+  retweets: [Retweet!]! @relation(name: "RetweetsByUser", onDelete: CASCADE)
+  following: [User!]! @relation(name: "FollowRelation")
+  followers: [User!]! @relation(name: "FollowRelation")
+  comments: [Comment!]! @relation(name: "CommentsByUser", onDelete: CASCADE)
+  likes: [Like!]! @relation(name: "LikesByUser", onDelete: CASCADE)
+  files: [File!]! @relation(name: "FilesByUser", onDelete: CASCADE)
+  createdAt: DateTime! @createdAt
+  updatedAt: DateTime! @updatedAt
+}
+
+type Tweet {
+  id: ID! @id
+  user: User @relation(name: "TweetsByUser")
+  text: String!
+  tags: [String!]! @scalarList(strategy: RELATION)
+  files: [File!]! @relation(name: "FilesForTweets", onDelete: CASCADE)
+  comments: [Comment!]! @relation(name: "CommentsForTweets", onDelete: CASCADE)
+  likes: [Like!]! @relation(name: "LikesForTweets", onDelete: CASCADE)
+  retweets: [Retweet!] @relation(name: "RetweetsOfTweet", onDelete: CASCADE)
+  createdAt: DateTime! @createdAt
+  updatedAt: DateTime! @updatedAt
+}
+
+type Comment {
+  id: ID! @id
+  text: String!
+  tweet: Tweet @relation(name: "CommentsForTweets")
+  user: User @relation(name: "CommentsByUser")
+  createdAt: DateTime! @createdAt
+  updatedAt: DateTime! @updatedAt
+}
+
+type Like {
+  id: ID! @id
+  tweet: Tweet @relation(name: "LikesForTweets")
+  user: User @relation(name: "LikesByUser")
+  createdAt: DateTime! @createdAt
+  updatedAt: DateTime! @updatedAt
+}
+
+type File {
+  id: ID! @id
+  url: String!
+  tweet: Tweet @relation(name: "FilesForTweets")
+  user: User @relation(name: "FilesByUser")
+  createdAt: DateTime! @createdAt
+  updatedAt: DateTime! @updatedAt
+}
+
+type Tag {
+  id: ID! @id
+  text: String!
+  tweets: [Tweet!]!
+  createdAt: DateTime! @createdAt
+  updatedAt: DateTime! @updatedAt
+}
+
+type Retweet {
+  id: ID! @id
+  tweet: Tweet @relation(name: "RetweetsOfTweet")
+  user: User @relation(name: "RetweetsByUser")
+  createdAt: DateTime! @createdAt
+  updatedAt: DateTime! @updatedAt
+}
