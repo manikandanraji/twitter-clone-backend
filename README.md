@@ -46,6 +46,23 @@ If you are looking for the frontend repo, it lives here [frontend](https://githu
 
 [![Everything Is AWESOME](screenshots/thumbnail.png)](https://youtu.be/Y71oeTYinRc "Twitter Clone backend setup")
 
+# Deploying the backend to heroku
+
+First create an heroku account and install the heroku cli globally and login
+
+```bash
+npm i -g heroku
+heroku login
+```
+
+Once logged in, create a new heroku application
+
+```bash
+heroku create
+git push heroku master
+```
+Then we need to manually setup the environmental variables using the heroku dashboard
+
 # Look at the UI
 
 ## Dark Mode
