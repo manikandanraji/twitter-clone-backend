@@ -55,7 +55,7 @@ npm i -g heroku
 heroku login
 ```
 
-Once logged in, create a new heroku application
+Once logged in, create a new heroku application and push it to the remote 'heroku'
 
 ```bash
 heroku create
