@@ -4,7 +4,7 @@
   "description": "Twitter backend with Prisma + Graphql",
   "main": "src/server.js",
   "scripts": {
-    "start": "nodemon -e js,graphql src/server.js",
+    "start": "node src/server.js",
     "dev": "nodemon -e js,graphql src/server.js"
   },
   "author": "Manikandan Raji",
