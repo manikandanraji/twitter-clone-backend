@@ -6,37 +6,37 @@ var typeDefs = require("./prisma-schema").typeDefs;
 var models = [
   {
     name: "User",
-    embedded: false
+    embedded: false,
   },
   {
     name: "Tweet",
-    embedded: false
+    embedded: false,
   },
   {
     name: "Comment",
-    embedded: false
+    embedded: false,
   },
   {
     name: "Like",
-    embedded: false
+    embedded: false,
   },
   {
     name: "File",
-    embedded: false
+    embedded: false,
   },
   {
     name: "Tag",
-    embedded: false
+    embedded: false,
   },
   {
     name: "Retweet",
-    embedded: false
-  }
+    embedded: false,
+  },
 ];
 exports.Prisma = prisma_lib_1.makePrismaClientClass({
   typeDefs,
   models,
   endpoint: `${process.env["PRISMA_ENDPOINT"]}`,
-  secret: `${process.env["PRISMA_SECRET"]}`
+  secret: `${process.env["PRISMA_SECRET"]}`,
 });
 exports.prisma = new exports.Prisma();
