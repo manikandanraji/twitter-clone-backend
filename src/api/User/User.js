@@ -8,7 +8,6 @@ module.exports = {
       return userId === parent.id;
     },
     isFollowing: async (parent, args, ctx) => {
-      // code here
       const userId = ctx.getUserId(ctx);
       const following = await ctx.prisma.user({ id: userId }).following({
         where: {
