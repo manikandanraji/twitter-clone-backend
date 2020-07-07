@@ -42,9 +42,6 @@ If you are looking for the frontend repo, it lives here [frontend](https://githu
 	# once you created your account, you can login from the terminal
 	prisma login
 	```
-- Then have a look at this video if prisma sounds new to you.
-
-[![Everything Is AWESOME](screenshots/thumbnail.png)](https://youtu.be/Y71oeTYinRc "Twitter Clone backend setup")
 
 # Deploying the backend to heroku
 
