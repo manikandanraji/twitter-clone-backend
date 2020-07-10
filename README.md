@@ -1,26 +1,22 @@
-# Twitter Clone - Backend
+# Twitter Clone Backend
 
-Built with Prisma + GraphQL
-If you are looking for the frontend repo, it lives here [frontend](https://github.com/manikandanraji/twitter-clone-frontend)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/c9d04c4d-788b-45f1-9477-7cdc22982721/deploy-status)](https://app.netlify.com/sites/twitterclone22/deploys)
 
-# The Stack
+Twitter clone backend built with Prisma and GraphQL.
 
-## Backend
-1. Prisma - provides data modelling and a nice set of CRUD APIs to work with
-2. GraphQLServer - graphql-yoga
-3. Authentication - JWT 
-4. Image upload - Cloudinary
+If you are looking for the frontend repo, [click here](https://github.com/manikandanraji/twitter-clone-frontend)
 
-## Frontend
-1. Frontend - Our beloved React
-2. State Management - ApolloClient (requests, updating UI, caching)
-3. Styling - Styled Components
-4. Routing - React Router
-5. Notifications - React Toastify
-6. Popups- Reactjs popup
+Check out the [deployed site](https://twitterclone22.netlify.app)
 
-# You can do these things
-- Login / Signup
+## Core Packages
+
+1. prisma - allows us to define our application models and generates CRUD operations from our defined models
+2. graphql-yoga - graphql server
+3. jsonwebtoken - authentication
+
+# Features
+
+- Signup / Login
 - New Tweet
 - Like
 - Retweet
@@ -28,23 +24,19 @@ If you are looking for the frontend repo, it lives here [frontend](https://githu
 - View Profile
 - Edit Profile
 - Search by users, tags, people
-- Toggle between light and dark mode
-- Cycle through five different accent colors
+- Dark theme / Light theme
 
 # How to setup locally
 
 - You need to have a prisma account
-- Make sure to install the prisma globally in your machine 
+- Make sure to install the prisma cli tool globally in your machine
 
 	```bash
 	npm i -g prisma
 
 	# once you created your account, you can login from the terminal
 	prisma login
-	```
-- Then have a look at this video if prisma sounds new to you.
-
-[![Everything Is AWESOME](screenshots/thumbnail.png)](https://youtu.be/Y71oeTYinRc "Twitter Clone backend setup")
+ 	```
 
 # Deploying the backend to heroku
 
@@ -61,25 +53,25 @@ Once logged in, create a new heroku application and push it to the remote 'herok
 heroku create
 git push heroku master
 ```
-Then we need to manually setup the environmental variables using the heroku dashboard
 
-# Look at the UI
+Then you need to manually setup the environmental variables using the heroku dashboard
 
-## Dark Mode
+# UI
 
-![Dark](screenshots/twitter_clone_frontend_dark.png)
+## Home
+![Home](screenshots/home.png)
 
-## Light Mode
+## Explore
+![Explore](screenshots/explore.png)
 
-![Light](screenshots/twitter_clone_frontend_light.png)
+## Profile
+![Profile](screenshots/profile.png)
 
-## Mobile Layout
-![Mobile](screenshots/mobile_layout.png)
+## Edit Profile
+![Edit Profile](screenshots/edit_profile.png)
 
-# TODO
-- Real-time notifications using GraphQL subscriptions
-- Bookmark tweeets
-- Show retweets on user profile
-- Show trending tags
-- Better mobile support
-- Add OLED theme
+## New Tweet
+![New Tweet](screenshots/new_tweet.png)
+
+## Tweet
+![Tweet](screenshots/tweet.png)

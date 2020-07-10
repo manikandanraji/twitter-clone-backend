@@ -60,7 +60,7 @@ module.exports = {
         });
       }
 
-      // 4. return tweet
+      // 5. return tweet
       return tweet;
     },
   },
