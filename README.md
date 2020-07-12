@@ -37,7 +37,6 @@ Check out the [deployed site](https://twitterclone22.netlify.app)
 	# once you created your account, you can login from the terminal
 	prisma login
 	```
-
 # Deploying the backend to heroku
 
 First create an heroku account and install the heroku cli globally and login
