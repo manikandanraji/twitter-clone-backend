@@ -14,7 +14,7 @@ Check out the [deployed site](https://twitterclone22.netlify.app)
 2. graphql-yoga - graphql server
 3. jsonwebtoken - authentication
 
-# Features
+## Features
 
 - Signup / Login
 - New Tweet
@@ -26,7 +26,9 @@ Check out the [deployed site](https://twitterclone22.netlify.app)
 - Search by users, tags, people
 - Dark theme / Light theme
 
-# How to setup locally
+## Running locally
+
+### Prisma setup
 
 - You need to have a prisma account
 - Make sure to install the prisma cli tool globally in your machine
@@ -37,7 +39,42 @@ Check out the [deployed site](https://twitterclone22.netlify.app)
 	# once you created your account, you can login from the terminal
 	prisma login
 	```
-# Deploying the backend to heroku
+
+- Once you logged into your account, you need to create a new prisma project
+
+	```bash
+	prisma init 
+	```
+
+- Copy the 'datamodel.prisma' file in the 'prisma_setup' folder to the root directory
+
+	```bash
+	cp prisma_setup/datamodel.prisma . # assuming you are present in the root directory
+	```
+
+- Then you need to simply deploy the changes you made
+
+	```bash
+	prisma deploy
+	```
+
+### Environmental variables setup
+
+- Create a .env file at the root directory with the following contents
+
+```javascript
+JWT_SECRET=<YOUR_SECRET>
+PORT=<PORT>
+```
+
+Then run <code>npm i && npm run dev</code> to start the development server
+
+## Watch this video on how to setup locally
+
+[![New Tweet](screenshots/new_tweet.png)](http://www.youtube.com/watch?v=d0bUTj56bDU "Twitter Clone Setup")
+
+
+## Deploying the backend to heroku
 
 First create an heroku account and install the heroku cli globally and login
 
@@ -55,22 +92,22 @@ git push heroku master
 
 Then you need to manually setup the environmental variables using the heroku dashboard
 
-# UI
+## UI
 
-## Home
+### Home
 ![Home](screenshots/home.png)
 
-## Explore
+### Explore
 ![Explore](screenshots/explore.png)
 
-## Profile
+### Profile
 ![Profile](screenshots/profile.png)
 
-## Edit Profile
+### Edit Profile
 ![Edit Profile](screenshots/edit_profile.png)
 
-## New Tweet
+### New Tweet
 ![New Tweet](screenshots/new_tweet.png)
 
-## Tweet
+### Tweet
 ![Tweet](screenshots/tweet.png)
