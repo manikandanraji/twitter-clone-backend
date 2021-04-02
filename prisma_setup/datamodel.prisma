@@ -7,11 +7,11 @@ type User {
   password: String
   coverPhoto: String
     @default(
-      value: "https://res.cloudinary.com/douy56nkf/image/upload/v1588128318/twitter-build/s4fftpwcaxpf19vh6zdo.png"
+      value: "https://res.cloudinary.com/tylerdurden/image/upload/v1617334073/random/Rectangle_2_mbyujf.png"
     )
   avatar: String
     @default(
-      value: "https://res.cloudinary.com/douy56nkf/image/upload/v1588127894/twitter-build/bvxmlgckusmrwyivsnzr.svg"
+      value: "https://res.cloudinary.com/tylerdurden/image/upload/v1602657481/random/pngfind.com-default-image-png-6764065_krremh.png"
     )
   bio: String @default(value: "")
   location: String @default(value: "")
