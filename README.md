@@ -1,12 +1,10 @@
 # Twitter Clone Backend
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/c9d04c4d-788b-45f1-9477-7cdc22982721/deploy-status)](https://app.netlify.com/sites/twitterclone22/deploys)
+**NOTE: As of 10-06-2022 at 19:35 IST, I am archiving this repository. It was fun while it lasted**.
 
 Twitter clone backend built with Prisma and GraphQL.
 
 If you are looking for the frontend repo, [click here](https://github.com/manikandanraji/twitter-clone-frontend)
-
-Check out the [deployed site](https://twitterclone22.netlify.app)
 
 ## Core Packages
 
